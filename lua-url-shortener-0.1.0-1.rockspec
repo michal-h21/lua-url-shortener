@@ -19,6 +19,13 @@ dependencies = {
 build = {
   type = "builtin",
    modules = {
-    ["lua-url-shortener"] = "src/lua-url-shortener.lua"
+    ["lua-url-shortener"] = "src/lua-url-shortener.lua",
+    ["config"] = "src/lua-url-shortener/config.lua"
+  },
+  install = {
+    bin = {
+      lushorten = "src/lua-url-shortener.lua"
+    }
   }
+
 }
