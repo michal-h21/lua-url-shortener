@@ -14,13 +14,14 @@ description = {
 }
 dependencies = {
   "lua >= 5.1",
-  "argparse"
+  "argparse",
 }
 build = {
   type = "builtin",
    modules = {
-    ["lua-url-shortener"] = "src/lua-url-shortener.lua",
-    ["config"] = "src/lua-url-shortener/config.lua"
+    ["lua-url-shortener.generator"] = "src/lua-url-shortener/generator.lua",
+    ["lua-url-shortener.config"]    = "src/lua-url-shortener/config.lua",
+    ["lua-url-shortener.add"]       = "src/lua-url-shortener/add.lua",
   },
   install = {
     bin = {
