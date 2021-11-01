@@ -9,7 +9,8 @@ end
 
 -- config file should be in Lua
 local function load_config(filename)
-  local env = {}
+  local env = {
+  }
   local fun, err = loadfile(filename, "t", env)
   if fun then
     fun()

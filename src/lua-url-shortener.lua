@@ -35,6 +35,26 @@ local lua_url_shortener = {
 
 
 local argparse = require "argparse"
-local config   = require "lua-url-shortener.config"
 
+local generator = require "lua-url-shortener.generator"
+local config    = require "lua-url-shortener.config"
+local add       = require "lua-url-shortener.add"
+
+local parser = argparse() {
+  name        = "lushorten",
+  description = "Make short URLs"
+}
+
+------------------------
+-- define subcommands --
+------------------------
+-- add new url
+local add_cmd = parser:command "add" "a"
+
+-- generate 
+local generate_cmd = parser:command "generate" "g"
+
+
+
+local args = parser:parse()
 
