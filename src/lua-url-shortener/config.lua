@@ -9,7 +9,11 @@ end
 
 -- config file should be in Lua
 local function load_config(filename)
+  -- add some default values
   local env = {
+    -- these are used in add.lua
+    default_alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+    default_format   = "%y.%m.$count"
   }
   local fun, err = loadfile(filename, "t", env)
   if fun then
