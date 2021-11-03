@@ -16,3 +16,11 @@ Features
 --------
 
 * TODO
+
+ 
+Configuration
+-------------
+
+Short URL formats
+-----------------
+
