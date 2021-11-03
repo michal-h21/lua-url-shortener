@@ -11,9 +11,9 @@ end
 local function load_config(filename)
   -- add some default values
   local env = {
-    -- these are used in add.lua
-    default_alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
-    default_format   = "%y.%m.$count"
+    -- these values are used in add.lua
+    alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+    format   = "%y.%m.$alphacount"
   }
   local fun, err = loadfile(filename, "t", env)
   if fun then
