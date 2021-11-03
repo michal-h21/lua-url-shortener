@@ -58,3 +58,9 @@ local generate_cmd = parser:command "generate" "g"
 
 local args = parser:parse()
 
+if args.add then
+  print("Add")
+elseif args.generate then
+  print("Generate")
+end
+
