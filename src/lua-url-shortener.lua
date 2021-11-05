@@ -39,6 +39,7 @@ local argparse = require "argparse"
 local generator = require "lua-url-shortener.generator"
 local config    = require "lua-url-shortener.config"
 local add       = require "lua-url-shortener.add"
+local log       = require "lua-url-shortener.log"
 
 local parser = argparse() {
   name        = "lushorten",
@@ -50,6 +51,13 @@ local parser = argparse() {
 ------------------------
 -- add new url
 local add_cmd = parser:command "add" "a"
+add_cmd:argument "url"
+       :args(1)
+       :description "URL to be shortened"
+
+add_cmd:option "-t" "--title"
+       :name "title"
+       :description "Page title"
 
 -- generate 
 local generate_cmd = parser:command "generate" "g"
@@ -58,8 +66,26 @@ local generate_cmd = parser:command "generate" "g"
 
 local args = parser:parse()
 
+-- load configuration
+local config_path = config.xdg_config("lushorten")
+-- declare cfg, but not initialize it, because we need to find if configuration file is present
+local cfg 
+if config_path then
+  cfg, msg = config.load_config(config_path)
+  if not cfg then
+    log.error(msg)
+  end
+end
+
+-- if configuration file loading failed, initialize config
+if not cfg then
+  cfg = config.default_env
+end
+
+
 if args.add then
-  print("Add")
+  print("Add", args.url)
+
 elseif args.generate then
   print("Generate")
 end
