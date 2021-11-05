@@ -22,6 +22,7 @@ build = {
     ["lua-url-shortener.generator"] = "src/lua-url-shortener/generator.lua",
     ["lua-url-shortener.config"]    = "src/lua-url-shortener/config.lua",
     ["lua-url-shortener.add"]       = "src/lua-url-shortener/add.lua",
+    ["lua-url-shortener.log"]       = "src/lua-url-shortener/log.lua",
   },
   install = {
     bin = {
