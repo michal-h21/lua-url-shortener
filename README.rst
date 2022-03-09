@@ -17,6 +17,11 @@ Features
 
 * TODO
 
+References:
+
+- Argparse https://mpeterv.github.io/argparse/#actions
+- Get URL after redirect to Internet archive - https://stackoverflow.com/questions/54870009/get-url-after-redirect-on-the-internet-archive
+- HTTP redirect: https://github.com/wesleytodd/short
  
 Configuration
 -------------
