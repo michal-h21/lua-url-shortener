@@ -20,6 +20,8 @@ describe("Test interpolation", function()
   
   local interpolators = add.interpolators
   it("should count urls from a month", function()
+    -- there are three records in January, 
+    -- but count calculates number of the next record, thus 4
     assert.same(interpolators.count(params),4)
   end)
   it("should count urls alphanumerically", function()
@@ -27,6 +29,7 @@ describe("Test interpolation", function()
   end)
   it("should count urls from a  day", function()
     params.format = "%Y-%m-%d-$count"
+    -- two records from the same day + 1
     assert.same(interpolators.count(params), 3)
   end)
   it("should support alpha dates", function()
